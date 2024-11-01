@@ -4,9 +4,6 @@
 ## Overview
 The Variable-size Allocator is a custom memory allocator written in C, designed to manage variable-sized memory blocks within a fixed memory pool. This implementation efficiently handles memory allocation, deallocation, and defragmentation, making it a useful component in systems that require fine handling of memory management.
 
-This project provides a mechanism to handle allocation requests within a memory block provided by the user.
-The VSA implementation is focused on efficiency for both memory usage and time complexity of operations, and does not use any additional memory to handle the memory pool.
-
 
 
 
