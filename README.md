@@ -1,11 +1,12 @@
 # Variable-Size Allocator
-The Variable-size Allocator is a custom memory allocator written in C, designed to manage variable-sized memory blocks within a fixed memory pool. This implementation efficiently handles memory allocation, deallocation, and defragmentation, making it a useful component in systems that require fine handling of memory management.
-
 
 
 ## Overview
-The Variable-size Allocator project provides a mechanism to handle allocation requests within a memory block provided by the user.
+The Variable-size Allocator is a custom memory allocator written in C, designed to manage variable-sized memory blocks within a fixed memory pool. This implementation efficiently handles memory allocation, deallocation, and defragmentation, making it a useful component in systems that require fine handling of memory management.
+
+This project provides a mechanism to handle allocation requests within a memory block provided by the user.
 The VSA implementation is focused on efficiency for both memory usage and time complexity of operations, and does not use any additional memory to handle the memory pool.
+
 
 
 
@@ -48,6 +49,7 @@ Returns: Size of largest continuous block possible for allocation in bytes.
 
 
 
+
 ## How it works
 
 The Variable-size Allocator manages memory within a user-provided memory pool. Each allocation is tracked by a hidden "header" attached to each block, which stores the size of the allocated block (positive for free blocks, negative for allocated ones). This design allows the allocator to navigate through memory blocks, locate free space, and handle both allocation and deallocation efficiently.
@@ -69,8 +71,10 @@ Defragmentation: During an allocation attempt, if the allocator finds a free blo
 Freeing Memory: When `VSAfree()` is called, the allocator reads the block size from the header to correctly release the exact amount of memory.
 
 
-**Memory Alignment**
+**Memory Alignment:**
+
 All allocations (and the memory pool itself) are aligned to the word size, ensuring that data within the memory blocks adheres to alignment requirements and optimizing performance.
+
 
 
 
